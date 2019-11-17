@@ -47,7 +47,7 @@ GetAgeInYears(3150000000,"Mars");
 
 console.log('************* Excercise 4: phrase ***************')
 
-let input = 'Wellcome To NIIT Ltd';
+let input = 'Welcome to to niit ltd';
 let words = input.trim().split(' ');
 let wordsMap  = new Map();
 let createWordMap = (words) => {   
@@ -61,5 +61,79 @@ console.log('************** Excercise 5: Reverse **************')
 
 let reversestring = function (username) { return username.split("").reverse().join(""); };
 console.log(reversestring("Wellcome"));
+
+console.log('************** Excercise 6: Triangle **************')
+
+let chk_tringle=(num1 :number, num2:number, num3:number): void =>{
+    if((num1==num2)&& (num2==num3)&&(num1==num3))
+    
+    {
+        console.log("The Given triangle is equivalent triangle");
+        console.log(num1,num2,num3);
+    }
+    else if((num1!=num2)&&(num2!=num3)&&(num1!=num3))
+    {
+        console.log("The given triangle is an Scalene Traingle");
+        console.log(num1,num2,num3);
+    }
+    else
+        console.log("The given triangle is an Scalene Traingle");
+        console.log(num1,num2,num3);
+    
+    }
+    chk_tringle(3,4,3);
+    
+
+    console.log('************** Excercise 7: Armstrong Number **************')    
+
+
+
+    let arm_str = (arms:number) =>
+    {
+        console.log(arms);
+    return new Promise(function(resolve,reject){
+    
+        if(arms==0)
+        {
+    reject("invalid number.")        ;
+        }
+    
+        let arm: number=0;
+        let a: number=0;
+        let temp:number=arms;           
+        var check=arms.toString().length;
+        while(temp>0)
+            {
+                a=temp%10;
+                temp=Math.floor(temp/10); 
+                arm=arm+Math.pow(a,check);
+            }   
+        if(arm==arms)
+            {
+             
+          return  resolve(arms+ " is Armstrong Number");
+            }
+        else
+            {
+                return  resolve(arms+ " is Not Armstrong Number");
+            }
+    })
+    }
+    arm_str(1634).then(success,failure);
+    function success(Smessage)
+    {
+    console.log(Smessage);    
+    }
+    function failure(Fmessage)
+    {
+    console.log(Fmessage);    
+    }
+
+
+
+
+
+
+
 
 
